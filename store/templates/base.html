@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}AV Nutrition{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{% url 'store:home' %}" class="text-2xl font-bold">AV Nutrition</a>
+            <ul class="flex space-x-6">
+                <li><a href="{% url 'store:home' %}" class="hover:underline">Home</a></li>
+                <li><a href="{% url 'store:product_list' %}" class="hover:underline">Products</a></li>
+                <li><a href="{% url 'store:cart_detail' %}" class="hover:underline">Cart</a></li>
+                {% if user.is_authenticated %}
+                <li class="mr-4">Hello, {{ user.username }}</li>
+                <li><a href="{% url 'store:logout' %}" class="hover:underline">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'admin:login' %}" class="hover:underline">Login</a></li>
+                <li><a href="{% url 'admin:login' %}" class="hover:underline">Signup</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <main class="flex-grow container mx-auto p-6">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-black text-white p-4 text-center">
+        &copy; 2025 AV Nutrition. All rights reserved.
+    </footer>
+</body>
+</html>
