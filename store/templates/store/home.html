@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home - AV Nutrition{% endblock %}
+
+{% block content %}
+<section class="text-center max-w-4xl mx-auto">
+    <h1 class="text-5xl font-bold mb-6 animate-pulse">Welcome to AV Nutrition</h1>
+    <p class="text-lg mb-4">
+        AV Nutrition is your trusted source for high-quality food and supplement products designed to support your health and wellness journey.
+    </p>
+    <p class="text-lg mb-4">
+        Our mission is to provide natural, effective, and safe nutrition products that help you achieve your fitness and health goals.
+    </p>
+    <p class="text-lg mb-4">
+        Explore our wide range of products, from nutritious foods to premium supplements, all carefully selected to meet the highest standards.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
+        <img src="https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg" alt="Healthy Food" class="rounded-lg shadow-md" />
+        <img src="https://images.pexels.com/photos/2294351/pexels-photo-2294351.jpeg" alt="Supplements" class="rounded-lg shadow-md" />
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Nutrition" class="rounded-lg shadow-md" />
+    </div>
+    <a href="{% url 'store:product_list' %}" class="inline-block mt-6 bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">Shop Now</a>
+</section>
+{% endblock %}
