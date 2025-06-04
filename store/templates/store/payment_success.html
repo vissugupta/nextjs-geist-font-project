@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment Success - Food & Supplements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 flex flex-col items-center justify-center">
+    <h1 class="text-4xl font-bold mb-4">Payment Successful!</h1>
+    <p class="mb-6">Thank you for your purchase. Your order is being processed.</p>
+    <a href="{% url 'store:product_list' %}" class="text-blue-600 hover:underline">Continue Shopping</a>
+</body>
+</html>
